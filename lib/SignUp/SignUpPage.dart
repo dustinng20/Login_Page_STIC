@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'FrostedGlassBox.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     Size size = MediaQuery.of(context).size;
     double contWidth = size.width * 0.90;
     return Scaffold(
@@ -45,7 +51,7 @@ class MyHomePage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(45),
                               color: Colors.black12),
                           child: TextField(
                             decoration: InputDecoration(
@@ -61,7 +67,7 @@ class MyHomePage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(45),
                               color: Colors.black12),
                           child: TextField(
                             decoration: InputDecoration(
@@ -74,11 +80,11 @@ class MyHomePage extends StatelessWidget {
                         SizedBox(height: 30),
                         Container(
                           width: 300,
-                          height: 50,
+                          height: 60,
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(45),
                               color: Color(0xff2A3D71)),
                           child: Center(
                             child: Text(
@@ -98,7 +104,7 @@ class MyHomePage extends StatelessWidget {
                               fontWeight: FontWeight.normal,
                               fontSize: 20),
                         ),
-                        /*Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             GestureDetector(
@@ -167,12 +173,13 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                           ],
-                        )*/
+                        )
                       ],
                     ),
                   ),
                 ),
               ),
+              SizedBox(height: 135),
               Center(
                   child: Text(
                 "Developed by R&D Department (DPIST)",
