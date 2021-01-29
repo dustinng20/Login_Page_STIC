@@ -21,8 +21,8 @@ class FrostedGlassBox extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
         child: Container(
-          width: 375.w,
-          height: 380.h,
+          width: 340.w,
+          height: 370.h,
           child: Stack(
             children: [
               BackdropFilter(
@@ -38,7 +38,7 @@ class FrostedGlassBox extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                           color: Colors.white.withOpacity(0.6),
-                          blurRadius: 80,
+                          blurRadius: 40,
                           offset: Offset(2, 2))
                     ],
                     borderRadius: BorderRadius.circular(20.0),

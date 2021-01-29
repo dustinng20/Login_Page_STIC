@@ -1,5 +1,4 @@
 import 'package:expandable/expandable.dart';
-
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -13,7 +12,7 @@ class _MissedCallsPage extends State<MissedCallsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF3F3F3),
+      backgroundColor: Color(0xFF6B8AE7),
       appBar: AppBar(
         title: Text("Thông số kĩ thuật", style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF6B8AE7),
@@ -29,7 +28,12 @@ class _MissedCallsPage extends State<MissedCallsPage> {
               child: Column(
                 children: <Widget>[
                   const ListTile(
-                    leading: Icon(Icons.album),
+                    minLeadingWidth: 10,
+                    leading: CircleAvatar(
+                      radius: 22.0,
+                      backgroundImage:
+                          AssetImage('assets/images/waterblue.png'),
+                    ),
                     title: Text('91 - 100 WQI',
                         style: TextStyle(
                           color: Color(0Xff2E6CA4),
@@ -78,8 +82,13 @@ class _MissedCallsPage extends State<MissedCallsPage> {
               child: Column(
                 children: <Widget>[
                   const ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('76 - 90 WQI',
+                    minLeadingWidth: 10,
+                    leading: CircleAvatar(
+                      radius: 22.0,
+                      backgroundImage:
+                          AssetImage('assets/images/watergreen.png'),
+                    ),
+                    title: Text('76-90 WQI',
                         style: TextStyle(
                           color: Color(0xFF4A8522),
                           fontWeight: FontWeight.bold,
@@ -127,8 +136,13 @@ class _MissedCallsPage extends State<MissedCallsPage> {
               child: Column(
                 children: <Widget>[
                   const ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('51 - 75 WQI',
+                    minLeadingWidth: 10,
+                    leading: CircleAvatar(
+                      radius: 22.0,
+                      backgroundImage:
+                          AssetImage('assets/images/wateryellow.png'),
+                    ),
+                    title: Text('51-75 WQI',
                         style: TextStyle(
                           color: Color(0xFFD29500),
                           fontWeight: FontWeight.bold,
@@ -176,8 +190,12 @@ class _MissedCallsPage extends State<MissedCallsPage> {
               child: Column(
                 children: <Widget>[
                   const ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('26 - 50 WQI',
+                    minLeadingWidth: 10,
+                    leading: CircleAvatar(
+                      radius: 22.0,
+                      backgroundImage: AssetImage('assets/images/waterred.png'),
+                    ),
+                    title: Text('26-50 WQI',
                         style: TextStyle(
                           color: Color(0XFFBE5007),
                           fontWeight: FontWeight.bold,
@@ -225,8 +243,13 @@ class _MissedCallsPage extends State<MissedCallsPage> {
               child: Column(
                 children: <Widget>[
                   const ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('0 - 25 WQI',
+                    minLeadingWidth: 10,
+                    leading: CircleAvatar(
+                      radius: 22.0,
+                      backgroundImage:
+                          AssetImage('assets/images/waterblack.png'),
+                    ),
+                    title: Text('0-25 WQI',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
