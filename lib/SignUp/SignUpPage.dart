@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(45))),
-                                  hintText: "Old Password",
+                                  hintText: "Password",
                                   errorText: _pass_Invalid ? _erro : null,
                                   hintStyle: TextStyle(
                                       color: Colors.grey, fontSize: 20),
