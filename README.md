@@ -1,7 +1,6 @@
-# flutter_application_1
+# STIC Project
 
-A new Flutter project.
-
+Đây là dự án về Flutter đầu tiên của team mình.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
