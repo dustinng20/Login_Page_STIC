@@ -19,7 +19,7 @@ class FrostedGlassBox extends StatelessWidget {
       borderRadius: BorderRadius.circular(20.0),
       child: Container(
         width: 375,
-        height: 350,
+        height: 385,
         child: Stack(
           children: [
             BackdropFilter(

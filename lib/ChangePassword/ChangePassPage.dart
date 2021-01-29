@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/SignUp/SignUpPage.dart';
 
 import 'FrostedGlassBox.dart';
 
@@ -63,15 +64,16 @@ class _MyPassPageState extends State<MyPassPage> {
                               fontWeight: FontWeight.normal),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 25),
                       Container(
-                        margin: EdgeInsets.only(top: 15),
-                        width: 345,
-                        padding:
+                        margin:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(45),
-                            color: Colors.black12),
+                        width: 345,
+                        // padding:
+                        //     EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        // decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(45),
+                        //     color: Colors.black12),
                         child: TextField(
                           controller: _oldController,
                           keyboardType: TextInputType.text,
@@ -82,15 +84,19 @@ class _MyPassPageState extends State<MyPassPage> {
                             });
                           },
                           decoration: InputDecoration(
-                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(45))),
                               hintText: "Old Password",
                               errorText: _passold_Invalid ? _erro : null,
                               hintStyle:
                                   TextStyle(color: Colors.grey, fontSize: 20),
                               suffixIcon: IconButton(
                                   icon: Icon(_isObscure1
-                                      ? Icons.visibility
-                                      : Icons.visibility_off),
+                                      ? Icons.visibility_off
+                                      : Icons.visibility),
                                   onPressed: () {
                                     setState(() {
                                       _isObscure1 = !_isObscure1;
@@ -101,11 +107,11 @@ class _MyPassPageState extends State<MyPassPage> {
                       SizedBox(height: 10),
                       Container(
                         width: 345,
-                        padding:
+                        margin:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(45),
-                            color: Colors.black12),
+                        // decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(45),
+                        //     color: Colors.black12),
                         child: TextField(
                           controller: _newController,
                           keyboardType: TextInputType.text,
@@ -116,15 +122,19 @@ class _MyPassPageState extends State<MyPassPage> {
                             });
                           },
                           decoration: InputDecoration(
-                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(45))),
                               hintText: "New Password",
                               errorText: _passnew_Invalid ? _erro : null,
                               hintStyle:
                                   TextStyle(color: Colors.grey, fontSize: 20),
                               suffixIcon: IconButton(
                                   icon: Icon(_isObscure2
-                                      ? Icons.visibility
-                                      : Icons.visibility_off),
+                                      ? Icons.visibility_off
+                                      : Icons.visibility),
                                   onPressed: () {
                                     setState(() {
                                       _isObscure2 = !_isObscure2;
@@ -132,34 +142,40 @@ class _MyPassPageState extends State<MyPassPage> {
                                   })),
                         ),
                       ),
-                      SizedBox(height: 30),
-                      ButtonTheme(
-                        minWidth: 350,
-                        height: 60,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        child: FlatButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(45)),
-                          color: Color(0xff2A3D71),
-                          onPressed: () {
-                            if (_newController.text.length < 6) {
-                              _passnew_Invalid = true;
-                            } else {
-                              _passnew_Invalid = false;
-                            }
-                            if (_oldController.text.length < 6) {
-                              _passold_Invalid = true;
-                            } else {
-                              _passold_Invalid = false;
-                            }
-                          },
-                          child: Text(
-                            "CHANGE",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal),
+                      Center(
+                        child: ButtonTheme(
+                          minWidth: 350,
+                          height: 60,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: FlatButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(45)),
+                            color: Color(0xff2A3D71),
+                            onPressed: () {
+                              if (_newController.text.length < 6) {
+                                _passnew_Invalid = true;
+                              } else {
+                                _passnew_Invalid = false;
+                              }
+                              if (_oldController.text.length < 6) {
+                                _passold_Invalid = true;
+                              } else {
+                                _passold_Invalid = false;
+                              }
+                              if (!_passnew_Invalid && !_passold_Invalid) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MyHomePage()));
+                              }
+                            },
+                            child: Text(
+                              "CHANGE",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ),
                         ),
                       ),
