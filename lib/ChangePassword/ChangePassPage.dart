@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Chart/MissedCallsPage.dart';
 import 'package:flutter_application_1/SignUp/SignUpPage.dart';
 
 import 'FrostedGlassBox.dart';
@@ -31,9 +32,11 @@ class _MyPassPageState extends State<MyPassPage> {
         body: Stack(
       children: <Widget>[
         Container(
+          height: double.infinity,
+          width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: Image.asset("assets/images/background_1.png").image,
+                image: Image.asset("assets/images/2.png").image,
                 fit: BoxFit.fill),
           ),
         ),
@@ -41,12 +44,6 @@ class _MyPassPageState extends State<MyPassPage> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              width: 220,
-              height: 220,
-              padding: EdgeInsets.all(1),
-              child: Image.asset('assets/images/LOGIN_LOGO.png'),
-            ),
             Center(
               child: FrostedGlassBox(
                 width: contWidth,
@@ -166,7 +163,8 @@ class _MyPassPageState extends State<MyPassPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => MyHomePage()));
+                                        builder: (context) =>
+                                            MissedCallsPage()));
                               }
                             },
                             child: Text(
@@ -184,17 +182,17 @@ class _MyPassPageState extends State<MyPassPage> {
                 ),
               ),
             ),
-            SizedBox(height: 150),
-            Center(
-                child: Text(
+          ],
+        )),
+        Container(
+            alignment: Alignment.bottomCenter,
+            child: Text(
               "Developed by R&D Department (DPIST)",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.normal,
                   fontSize: 21),
             ))
-          ],
-        )),
       ],
     ));
   }
